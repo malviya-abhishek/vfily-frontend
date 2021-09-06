@@ -1,0 +1,31 @@
+.wrapper {
+	width: max-content;
+	margin: auto;
+	text-align: center;
+	background-color: white;
+	padding-bottom: 20px;
+	margin-top: 50px;
+	border-radius: 50px;
+}
+
+.login-image {
+	border-radius: 50px;
+	max-width: 500px;
+}
+
+.sub-text {
+	font-size: larger;
+	color: black;
+}
+
+@media screen and (max-width: 410px) {
+	.wrapper {
+		margin-top: 10px;
+	}
+
+	.login-image {
+		max-width: 300px;
+
+		/* width: 80%; */
+	}
+}

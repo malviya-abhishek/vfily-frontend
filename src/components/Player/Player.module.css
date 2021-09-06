@@ -1,0 +1,45 @@
+.playerWrapper {
+	padding-top: 30px;	
+	padding-bottom: 5px;
+	background-color: rgb(255, 255, 30);
+	border-bottom: 2px rgb(255, 255, 40) solid;
+}
+
+.Player {
+	width: 100%;
+	height: 555px;
+	background-color: #000;
+}
+
+.title {
+	padding-left: 5px;
+	font-size: xx-large;
+	text-decoration: none;
+	margin-bottom: 20px;
+	color: #000;
+}
+
+.description {
+	padding-left: 5px;
+	font-size: large;
+	color: #000;
+}
+
+@media screen and (max-width: 410px) {
+	.playerWrapper {
+		padding-top: 0;	
+	}
+	.Player {
+		background-color: #000 ;
+		margin: 0;
+		width: 100%;
+		height: 200px;
+	}
+	.title {
+		padding-left: 10px;
+		margin: 10px 0;
+	}
+	.description {
+		padding-left: 10px;
+	}
+}
