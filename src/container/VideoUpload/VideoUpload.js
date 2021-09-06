@@ -73,15 +73,15 @@ class VideoUpload extends Component {
 		this.setState({message:"Upload start"})
 		axios
 			.post("upload", data, { crossDomain: true, withCredentials: true }, {
-				onUploadProgress: (ProgressEvent) => {
-					this.setState({
-						message:
-							Math.round(
-								(ProgressEvent.loaded / ProgressEvent.total) *
-									100
-							) + " % completed",
-					});
-				},
+				// onUploadProgress: (ProgressEvent) => {
+				// 	this.setState({
+				// 		message:
+				// 			Math.round(
+				// 				(ProgressEvent.loaded / ProgressEvent.total) *
+				// 					100
+				// 			) + " % completed",
+				// 	});
+				// },
 			})
 			.then((res) => {
 				this.setState({
