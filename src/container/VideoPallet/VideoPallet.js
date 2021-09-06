@@ -7,8 +7,6 @@ import config from "./../../config";
 
 axios.defaults.withCredentials = true;
 
-const endpoint = "videos";
-// const endpoint = config.API_URL;
 
 function VideoPallet(props) {
 	const [list, setList] = useState([]);
@@ -16,7 +14,7 @@ function VideoPallet(props) {
 	useEffect(() => {
 		if (props.logged) {
 			axios
-				.get(endpoint, { crossDomain: true, withCredentials: true })
+				.get("videos", { crossDomain: true, withCredentials: true })
 				.then((list) => {
 					const temp = [];
 					list.data.forEach((element) => {

@@ -4,7 +4,6 @@ import { Link, Redirect } from "react-router-dom";
 import classes from "./Login.module.css";
 axios.defaults.withCredentials = true;
 
-const endpoint = "auth";
 
 class Login extends Component {
 	state = {
@@ -59,7 +58,7 @@ class Login extends Component {
 
 		axios
 			.post(
-				endpoint,
+				"auth",
 				data,
 				{crossDomain: true, withCredentials: true}
 			)

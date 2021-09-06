@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import classes from "./VideoUpload.module.css";
 import axios from "axios";
 
-const endpoint = "upload";
 
 class VideoUpload extends Component {
 	state = {
@@ -71,9 +70,9 @@ class VideoUpload extends Component {
 		// 	// 	Authorization: "Bearer " + localStorage.getItem("token"),
 		// 	// },
 		// };
-		this.setState({message:"Uploading started"})
+		this.setState({message:"Upload start"})
 		axios
-			.post(endpoint, data, { crossDomain: true, withCredentials: true }, {
+			.post("upload", data, { crossDomain: true, withCredentials: true }, {
 				onUploadProgress: (ProgressEvent) => {
 					this.setState({
 						message:
