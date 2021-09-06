@@ -64,9 +64,10 @@ class Login extends Component {
 				{crossDomain: true, withCredentials: true}
 			)
 			.then((result) => {
-				result.headers.forEach(element => {
-					console.log("header", element);
-				});
+				// result.headers.forEach(element => {
+				// 	console.log("header", element);
+				// });
+				console.log(result.headers);
 				let name = result.data.name.split(" ")[0];
 				this.props.setName(name);
 				this.props.setLogged(1);
