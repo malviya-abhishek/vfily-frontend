@@ -58,7 +58,12 @@ class Login extends Component {
 		};
 
 		axios
-			.post(endpoint, data)
+			.post(
+				endpoint,
+				data,
+				{ headers: { "Content-Type": "application/json" } },
+				{ withCredentials: true }
+			)
 			.then((result) => {
 				let name = result.data.name.split(" ")[0];
 				this.props.setName(name);
@@ -68,7 +73,7 @@ class Login extends Component {
 			})
 			.catch((err) => {
 				this.setState({ message: "User does not exist" });
-				console.log("[User request]", err.response, err);
+				console.log("[User request]", err.response);
 			});
 	};
 
