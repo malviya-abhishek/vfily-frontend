@@ -66,14 +66,14 @@ class VideoUpload extends Component {
 
 		data.append("video", this.state.video, this.state.video.name);
 
-		const config = {
-			headers: {
-				Authorization: "Bearer " + localStorage.getItem("token"),
-			},
-		};
+		// const config = {
+		// 	// headers: {
+		// 	// 	Authorization: "Bearer " + localStorage.getItem("token"),
+		// 	// },
+		// };
 
 		axios
-			.post(endpoint, data, config, {
+			.post(endpoint, data, { crossDomain: true, withCredentials: true }, {
 				onUploadProgress: (ProgressEvent) => {
 					this.setState({
 						message:
