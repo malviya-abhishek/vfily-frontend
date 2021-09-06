@@ -35,7 +35,7 @@ function VideoPallet(props) {
 					setList(temp);
 				})
 				.catch((err) => {
-					console.log(err);
+					console.log(err, err.data);
 				});
 		}
 	}, [props.logged]);
