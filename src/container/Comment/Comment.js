@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import classes from "./Comment.module.css";
-import { socket } from "../../context/socket";
+// import { socket } from "../../context/socket";
 
 const endPoint = "";
 
@@ -41,7 +41,7 @@ function Comment(props) {
 
 	// Using as component did mount
 	useEffect(() => {
-		socket.emit("join", `video_${props.videoId}`);
+		// socket.emit("join", `video_${props.videoId}`);
 		const commentEndPoint = endPoint + "/comments";
 		axios
 			.get(commentEndPoint, {
@@ -66,19 +66,19 @@ function Comment(props) {
 			});
 	}, []);
 
-	useEffect(() => {
-		socket.on("commentCreated", (data) => {
-			const temp = [
-				{
-					username: data.name,
-					content: data.content,
-					id: data._id,
-				},
-				...comments,
-			];
-			setComments(temp);
-		});
-	}, [comments]);
+	// useEffect(() => {
+	// 	socket.on("commentCreated", (data) => {
+	// 		const temp = [
+	// 			{
+	// 				username: data.name,
+	// 				content: data.content,
+	// 				id: data._id,
+	// 			},
+	// 			...comments,
+	// 		];
+	// 		setComments(temp);
+	// 	});
+	// }, [comments]);
 
 	const list = [];
 	comments.forEach((e) => {

@@ -3,7 +3,6 @@ import Player from "../../components/Player/Player";
 import Comment from "../Comment/Comment";
 import classes from "./VideoPlayer.module.css";
 import axios from "axios";
-axios.defaults.withCredentials = true;
 
 function VideoPlayer(props) {
 	const [state, setState] = useState({
