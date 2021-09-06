@@ -16,7 +16,7 @@ function VideoPallet(props) {
 	useEffect(() => {
 		if (props.logged) {
 			axios
-				.get(endpoint, { withCredentials: true })
+				.get(endpoint, { crossDomain: true, withCredentials: true })
 				.then((list) => {
 					const temp = [];
 					list.data.forEach((element) => {
@@ -35,7 +35,7 @@ function VideoPallet(props) {
 					setList(temp);
 				})
 				.catch((err) => {
-					console.log(err, err.data);
+					console.log(err);
 				});
 		}
 	}, [props.logged]);
