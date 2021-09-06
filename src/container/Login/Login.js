@@ -61,7 +61,6 @@ class Login extends Component {
 			.post(
 				endpoint,
 				data,
-				{ headers: { "Content-Type": "application/json" } },
 				{ withCredentials: true }
 			)
 			.then((result) => {
