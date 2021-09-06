@@ -61,9 +61,12 @@ class Login extends Component {
 			.post(
 				endpoint,
 				data,
-				{ withCredentials: true }
+				{crossDomain: true, withCredentials: true}
 			)
 			.then((result) => {
+				result.headers.forEach(element => {
+					console.log("header", element);
+				});
 				let name = result.data.name.split(" ")[0];
 				this.props.setName(name);
 				this.props.setLogged(1);
