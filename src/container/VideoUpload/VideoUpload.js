@@ -71,7 +71,7 @@ class VideoUpload extends Component {
 		// 	// 	Authorization: "Bearer " + localStorage.getItem("token"),
 		// 	// },
 		// };
-
+		this.setState({message:"Uploading started"})
 		axios
 			.post(endpoint, data, { crossDomain: true, withCredentials: true }, {
 				onUploadProgress: (ProgressEvent) => {
